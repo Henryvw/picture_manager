@@ -1,4 +1,12 @@
 PictureManager::Application.routes.draw do
+
+  resources :users
+  resources :sessions
+
+  get "sign_up" => "users#new", :as => "sign_up"
+  get "log_in" => "sessions#new", :as => "log_in"
+  get "log_out" => "sessions#destroy", :as => "log_out"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -39,7 +47,7 @@ PictureManager::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
