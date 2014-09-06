@@ -1,7 +1,15 @@
 PictureManager::Application.routes.draw do
 
+  resources :collections
+
+  resources :monuments
+
+  resources :pictures
+
   resources :users
   resources :sessions
+
+  root "collections#index"
 
   get "sign_up" => "users#new", :as => "sign_up"
   get "log_in" => "sessions#new", :as => "log_in"

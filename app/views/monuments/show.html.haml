@@ -1,0 +1,17 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @monument.name
+%p
+  %strong Description:
+  = @monument.description
+%p
+  %strong Category:
+  = @monument.category_id
+
+%p
+  %strong Collection:
+  = @monument.collection_id
+= link_to 'Edit', edit_monument_path(@monument)
+|
+\#{link_to 'Back', monuments_path}

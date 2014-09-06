@@ -1,4 +1,6 @@
 -if current_user
   %h3 Welcome to Picture Manager
+  = link_to "Create A New Picture Collection", new_collection_path
 -else
+  %h3 Welcome to Picture Manager
   = render 'login'

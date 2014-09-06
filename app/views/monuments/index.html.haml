@@ -1,0 +1,21 @@
+%h1 Listing monuments
+%table
+  %thead
+    %tr
+      %th Name
+      %th Description
+      %th Category
+      %th
+      %th
+      %th
+  %tbody
+    - @monuments.each do |monument|
+      %tr
+        %td= monument.name
+        %td= monument.description
+        %td= monument.category_id
+        %td= link_to 'Show', monument
+        %td= link_to 'Edit', edit_monument_path(monument)
+        %td= link_to 'Destroy', monument, method: :delete, data: { confirm: 'Are you sure?' }
+%br
+  = link_to 'New Monument', new_monument_path
