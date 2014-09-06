@@ -11,7 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140905120334) do
+ActiveRecord::Schema.define(version: 20140906164540) do
+
+  create_table "collections", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  create_table "monuments", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "collection_id"
+  end
+
+  create_table "pictures", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email"
