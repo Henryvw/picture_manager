@@ -25,7 +25,6 @@ class MonumentsController < ApplicationController
   # POST /monuments
   # POST /monuments.json
   def create
-    binding.pry
     @monument = Monument.new(monument_params.merge(collection_id: @collection.id))
 
     respond_to do |format|
