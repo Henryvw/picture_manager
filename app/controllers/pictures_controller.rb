@@ -14,7 +14,8 @@ class PicturesController < ApplicationController
 
   # GET /pictures/new
   def new
-    @picture = Picture.new
+    @monument = Monument.find(params[:monument_id])
+    @picture = Picture.new(monument_id: @monument.id)
   end
 
   # GET /pictures/1/edit
@@ -24,7 +25,8 @@ class PicturesController < ApplicationController
   # POST /pictures
   # POST /pictures.json
   def create
-    @picture = Picture.new(picture_params)
+    @monument = Monument.find(params[:monument_id])
+    @picture = @monument.pictures.create(picture_params)
 
     respond_to do |format|
       if @picture.save

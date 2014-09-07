@@ -25,7 +25,8 @@ class MonumentsController < ApplicationController
   # POST /monuments
   # POST /monuments.json
   def create
-    @monument = Monument.new(monument_params.merge(collection_id: @collection.id))
+    @collection = Collection.find(params[:collection_id])
+    @monument = @collection.monuments.create(monument_params)
 
     respond_to do |format|
       if @monument.save
