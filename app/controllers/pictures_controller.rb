@@ -1,4 +1,5 @@
 class PicturesController < ApplicationController
+  before_action :require_user_session!
   before_action :set_picture, only: [:show, :edit, :update, :destroy]
 
   # GET /pictures
