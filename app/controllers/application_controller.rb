@@ -9,7 +9,8 @@ class ApplicationController < ActionController::Base
   end
 
   def require_user_session!
-    unless @current_user
+    unless current_user
+      flash[:notice] = "Hey there, please make sure to log in first."
       redirect_to new_session_url
       return false
     end
