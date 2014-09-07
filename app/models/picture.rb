@@ -9,8 +9,7 @@ has_attached_file :photo,
     },
   :default_url => "/images/:style/missing.png"
 
-validates_attachment_presence :photo
-validates_attachment_size :photo, less_than: 10.megabytes
+
 validates_attachment_content_type :photo, content_type: ['image/jpeg', 'image/png']
 
 end
