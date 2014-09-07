@@ -9,6 +9,10 @@ PictureManager::Application.routes.draw do
   resources :users
   resources :sessions
 
+  resources :categories
+
+  get "add_category" => "categories#new", :as => "add_category"
+
   root "collections#index"
 
   get "sign_up" => "users#new", :as => "sign_up"
