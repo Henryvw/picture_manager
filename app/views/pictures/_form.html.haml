@@ -19,5 +19,6 @@
     = f.label :date
     %br
       = f.text_field :date
+    = hidden_field_tag 'monument_id', params[:monument_id]
   .actions
     = f.submit
